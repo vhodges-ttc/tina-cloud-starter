@@ -16,9 +16,9 @@ export default JobsPage;
 export async function getServerSideProps({ params }) {
   let job = {};
   try {
-    const slug = 'od00t90uXQkgIhffTVllz'
+    const slug = '4-2yUqBXSJEWBTY_k4E4L'
     const jobId = params.jobid; // Extract the second parameter from the URL
-    const response = await fetch(`http://0.0.0.0:4500/endpoint/${slug}/job_details/${jobId}`);
+    const response = await fetch(`https://connect.app.jobvite.com/endpoint/${slug}/job_details/${jobId}`);
     console.log(response);
     job = await response.json();
     console.log(job);
