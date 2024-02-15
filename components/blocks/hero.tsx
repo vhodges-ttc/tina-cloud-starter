@@ -36,7 +36,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
             <Searchbar
               onSubmit={(searchTerm: string) => {
                 // when the user submits the form, we only modify the router query parameters
-                router.push('/job_search/'+ searchTerm)
+                router.push(`/job_search/search?q=${searchTerm}`)
               }}
               inputProps={{}}
             />
