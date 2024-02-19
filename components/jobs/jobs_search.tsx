@@ -11,7 +11,8 @@ const theme = useTheme();
 const jobs_count = jobs.entries.length
   return (
     <div>
-      <Typography variant="h4"sx={{marginBottom: 5}}>{jobs_count} jobs found</Typography>
+      <p className="text-2xl">{jobs_count} jobs found</p>
+      {/* <Typography variant="h4"sx={{marginBottom: 5}}>{jobs_count} jobs found</Typography> */}
       <Box >
         <Divider sx= {{backgroundColor:"#3b3b3b", borderColor:"#3b3b3b"}} 
                    />
