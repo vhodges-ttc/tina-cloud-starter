@@ -24,7 +24,7 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
 
   return (
     <Section color={data.color}>
-      <div className="max-w-md mx-auto ...">
+      <div className="max-w-md mx-auto mt-20">
         <Searchbar />
       </div>
             
