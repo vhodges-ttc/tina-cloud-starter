@@ -7,10 +7,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { TinaTemplate } from "tinacms";
 import { PageBlocksHero } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
-import { Box, Typography } from "@mui/material";
 import Searchbar from "../jobs/jobs_searchbar";
-
-import { useRouter } from "next/router";
 
 export const Hero = ({ data }: { data: PageBlocksHero }) => {
   const theme = useTheme();
@@ -24,24 +21,13 @@ export const Hero = ({ data }: { data: PageBlocksHero }) => {
     orange: "from-orange-300 to-orange-600",
     yellow: "from-yellow-400 to-yellow-600",
   };
-  const router = useRouter();
 
   return (
     <Section color={data.color}>
-      <Box maxWidth={"sm"} margin="auto" sx={{ textAlign: "right" }}>
-          <Typography textAlign="center" my={2}>
-            Search Jobs
-          </Typography>
-          <Box>
-            <Searchbar
-              onSubmit={(searchTerm: string) => {
-                // when the user submits the form, we only modify the router query parameters
-                router.push(`/job_search/search?q=` + searchTerm.replace(/ /g,"+"))
-              }}
-              inputProps={{}}
-            />
-          </Box>
-        </Box>
+      <div className="max-w-md mx-auto ...">
+        <Searchbar />
+      </div>
+            
       <Container
         size="large"
         className="grid grid-cols-1 md:grid-cols-5 gap-14 items-center justify-center"
