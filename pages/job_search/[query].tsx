@@ -24,12 +24,10 @@ export async function getServerSideProps({req, res, resolvedUrl}) {
   //Searching for Jobs
   const query = resolvedUrl.split('?')[1].replace(/ /g,"+")
   const apiUrl = process.env.EMPLOY_END_POINT_BASE_URL;
+  const data_format = 'data_format=detail';
   let jobs = {};
-  // const slug = 'smraJqMp2skqO3yyu7BL5'
-  // const response = await fetch(`https://connect.app.jviqa.com/endpoint/${slug}/search_jobs?${query}`);
-  let response = await fetch(`${apiUrl}/search_jobs?${query}`);
+  let response = await fetch(`${apiUrl}/search_jobs?${query}&${data_format}`);
   jobs = await response.json();
-
   return {
     props: {
         jobs: jobs
